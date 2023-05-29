@@ -5,10 +5,14 @@
 # project = pipeline
 # with parameter: type=choice | name=action | choices=apply destroy
 # definition: pipeline script from scm
+# use "additional behavior -> sparse checkout path -> "testenv/" and scriptpath - "testenv/Jenkinsfile"
 ###
 # also install terraform on jenkins server and configure its path 
 # 
-
+# here the Jenkinsfile is in a subdirectory "testenv"
+# inside the git repo - https://github.com/alokaryan/jenkins-aws-folder.git
+# and terraform files are also under the testenv directory
+# 
 ### Jenkinsfile need to be on git
 
 */
