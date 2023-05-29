@@ -31,14 +31,18 @@ pipeline {
         
         stage ("terraform init") {
             steps {
-                sh ('terraform init') 
+                dir ('testenv') {
+                  sh ('terraform init') 
+                }
             }
         }
         
         stage ("terraform Action") {
             steps {
-                echo "Terraform action is --> ${action}"
-                sh ('terraform ${action} --auto-approve') 
+                dir ('testenv') {
+                   echo "Terraform action is --> ${action}"
+                   sh ('terraform ${action} --auto-approve')
+                }
            }
         }
     }
